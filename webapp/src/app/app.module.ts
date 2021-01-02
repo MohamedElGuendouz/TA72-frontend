@@ -11,6 +11,12 @@ import { ForumComponent } from './forum/forum.component';
 import { SubjectDetailComponent } from './subject-detail/subject-detail.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { CreateSubjectComponent } from './create-subject/create-subject.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,11 +28,17 @@ import { CreateSubjectComponent } from './create-subject/create-subject.componen
     ForumComponent,
     SubjectDetailComponent,
     SubjectListComponent,
-    CreateSubjectComponent
+    CreateSubjectComponent,
+    CreateUserComponent,
+    UserDetailComponent,
+    UserListComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
