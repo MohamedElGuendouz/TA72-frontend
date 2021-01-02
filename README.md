@@ -12,9 +12,9 @@ Composants :
 ------------------------
 
 - forum
-- subjet-detail
-- subjet-list
-- create-subjet
+- subject-detail
+- subject-list
+- create-subject
 
 ________________________
 
