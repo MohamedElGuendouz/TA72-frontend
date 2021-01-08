@@ -1,0 +1,72 @@
+{
+    "publications": [
+        {
+            "id": 1,
+            "subject": "Comment créer un sujet de discution sur la plateforme",
+            "name": "El Guendouz Mohamed",
+            "email": "mohamedelg@utbm.fr",
+            "content": "Salut tous le monde ! :) Quelqu'un serait comment créer un sujet de discution sur ce forum ?",
+            "like": 25
+        }
+    ],
+    "get-reactions": [
+        {
+            "id": 1,
+            "name": "Peurey LOANN",
+            "email": "lp@utbm.fr",
+            "content": "Aucune idée mais j'aimerai bien savoir :)",
+            "like": 13
+        },
+        {
+            "id": 2,
+            "name": "Jean Charles",
+            "email": "jp@utbm.fr",
+            "content": "Tu devrais apercevoir dans la rebrique Forum, un button en haut à droite pour créer un sujet de discution.",
+            "like": 45
+        },
+        {
+            "id": 3,
+            "name": "Mohamed El Guendouz",
+            "email": "mohamedelg@utbm.fr",
+            "content": "Oui c'est bon j'ai trouvé ! merci :)",
+            "like": 2
+        }
+    ],
+    "last-messages": [
+        {
+            "id-message-list": 1,
+            "last-message-name": "Loann Peurey",
+            "last-message-email": "lp@utbm.fr",
+            "last-message-content": "Salut Mohamed ! Tu vas bien ?"
+        },
+        {
+            "id-message-list": 2,
+            "last-message-name": "Jean Charles",
+            "last-message-email": "jc@utbm.fr",
+            "last-message-content": "Yo ! tu es nouveau dans ce forum ?"
+        }
+    ],
+    "messages": [
+        {
+            "id-message-list": 1,
+            "id-message": 1,
+            "last-message-name": "Loann Peurey",
+            "last-message-email": "lp@utbm.fr",
+            "last-message-content": "Salut Mohamed ! Tu vas bien ?"
+        },
+        {
+            "id-message-list": 1,
+            "id-message": 2,
+            "last-message-name": "Mohamed El Guendouz",
+            "last-message-email": "mohamedelg@utbm.fr",
+            "last-message-content": "Très bien et toi ?"
+        },
+        {
+            "id-message-list": 1,
+            "id-message": 3,
+            "last-message-name": "Loann Peurey",
+            "last-message-email": "lp@utbm.fr",
+            "last-message-content": "Pareil pour moi"
+        }
+    ]
+}

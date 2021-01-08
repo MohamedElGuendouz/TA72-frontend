@@ -9,14 +9,17 @@ import { MessageListComponent } from './message-list/message-list.component';
 import { CreateMessageComponent } from './create-message/create-message.component';
 import { ForumComponent } from './forum/forum.component';
 import { SubjectDetailComponent } from './subject-detail/subject-detail.component';
-import { SubjectListComponent } from './subject-list/subject-list.component';
 import { CreateSubjectComponent } from './create-subject/create-subject.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ReactionDetailComponent } from './reaction-detail/reaction-detail.component';
+import { ReactionListComponent } from './reaction-list/reaction-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CreateReactionComponent } from './create-reaction/create-reaction.component';
 
 @NgModule({
   declarations: [
@@ -27,18 +30,22 @@ import { RouterModule } from '@angular/router';
     CreateMessageComponent,
     ForumComponent,
     SubjectDetailComponent,
-    SubjectListComponent,
     CreateSubjectComponent,
     CreateUserComponent,
     UserDetailComponent,
     UserListComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ReactionDetailComponent,
+    ReactionListComponent,
+    CreateReactionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
