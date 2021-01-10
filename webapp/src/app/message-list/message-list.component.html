@@ -1,5 +1,20 @@
 <ul class="list-group">
-    <li class="list-group-item"><span>List Group Item 1</span></li>
-    <li class="list-group-item"><span>List Group Item 2</span></li>
-    <li class="list-group-item"><span>List Group Item 3</span></li>
+    <div *ngFor="let apercu of lastMessage | async; let i = index;">
+
+        <div *ngIf="i==1; then thenBlock else elseBlock"></div>
+        <ng-template #elseBlock>
+            <li class="list-group-item">
+                <a href="/messagerie" class="stretched-link"></a>
+                <h5>{{apercu.name}} </h5>
+                <h6 style="font-size: 12px;">{{apercu.content}} </h6>
+            </li>
+        </ng-template>
+        <ng-template #thenBlock>
+            <li class="list-group-item">
+                <a href="/messagerie" class="stretched-link"></a>
+                <p>{{apercu.name}} </p>
+                <p style="font-size: 12px;">{{apercu.content}} </p>
+            </li>
+        </ng-template>
+    </div>
 </ul>

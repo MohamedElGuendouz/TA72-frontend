@@ -1,10 +1,27 @@
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-            dapibus ac
-            facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a
-            class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
+        <div *ngFor="let message of messages | async">
+            <div class="card-header">
+                <h6>{{message.name}}</h6>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">{{message.content}}</p>
+                </div>
+            </div>
+            <br>
+        </div>
+        <br>
+        <hr>
+        <button (click)="toggleDiv()" class="btn btn-primary">
+            <i class="fa fa-commenting-o"></i>
+             Réagir
+        </button>
+        <div class="container">
+            <br>
+            <div *ngIf="is_show">
+                <app-create-message></app-create-message>
+            </div>
+        </div>
     </div>
 </div>

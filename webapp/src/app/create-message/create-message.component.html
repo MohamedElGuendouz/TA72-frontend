@@ -1,1 +1,14 @@
-<p>create-message works!</p>
+<div class="card text-center" style="padding: 30px;">
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+                <input formControlName="content" type="text" class="form-control" style="margin: 10px;" />
+            </div>
+            <div class="col-lg-2 d-inline-flex d-xl-flex justify-content-xl-end align-items-xl-center">
+                <button class="btn btn-primary" type="button" style="margin-right: 52px; margin: 10px; " [disabled]="!messageForm.valid">
+                    Envoyer
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

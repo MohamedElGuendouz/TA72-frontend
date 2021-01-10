@@ -1,8 +1,25 @@
 {
-    "publications": [
+    "publications": 
+    [
         {
             "id": 1,
             "subject": "Comment créer un sujet de discution sur la plateforme",
+            "name": "El Guendouz Mohamed",
+            "email": "mohamedelg@utbm.fr",
+            "content": "Salut tous le monde ! :) Quelqu'un serait comment créer un sujet de discution sur ce forum ?",
+            "like": 25
+        },
+        {
+            "id": 2,
+            "subject": "Où faut-il aller pour s'inscrire ?",
+            "name": "El Guendouz Mohamed",
+            "email": "mohamedelg@utbm.fr",
+            "content": "Salut tous le monde ! :) Quelqu'un serait comment créer un sujet de discution sur ce forum ?",
+            "like": 25
+        },
+        {
+            "id": 3,
+            "subject": "Est-il possible de s'envoyer des messages privées ?",
             "name": "El Guendouz Mohamed",
             "email": "mohamedelg@utbm.fr",
             "content": "Salut tous le monde ! :) Quelqu'un serait comment créer un sujet de discution sur ce forum ?",
@@ -34,39 +51,39 @@
     ],
     "last-messages": [
         {
-            "id-message-list": 1,
-            "last-message-name": "Loann Peurey",
-            "last-message-email": "lp@utbm.fr",
-            "last-message-content": "Salut Mohamed ! Tu vas bien ?"
+            "id": 1,
+            "name": "Loann Peurey",
+            "email": "lp@utbm.fr",
+            "content": "Salut Mohamed ! Tu vas bien ?"
         },
         {
-            "id-message-list": 2,
-            "last-message-name": "Jean Charles",
-            "last-message-email": "jc@utbm.fr",
-            "last-message-content": "Yo ! tu es nouveau dans ce forum ?"
+            "id": 2,
+            "name": "Jean Charles",
+            "email": "jc@utbm.fr",
+            "content": "Yo ! tu es nouveau dans ce forum ?"
         }
     ],
-    "messages": [
+    "messages-avec-loann": [
         {
-            "id-message-list": 1,
-            "id-message": 1,
-            "last-message-name": "Loann Peurey",
-            "last-message-email": "lp@utbm.fr",
-            "last-message-content": "Salut Mohamed ! Tu vas bien ?"
+            "id": 1,
+            "idList": 1,
+            "name": "Loann Peurey",
+            "email": "lp@utbm.fr",
+            "content": "Salut Mohamed ! Tu vas bien ?"
         },
         {
-            "id-message-list": 1,
-            "id-message": 2,
-            "last-message-name": "Mohamed El Guendouz",
-            "last-message-email": "mohamedelg@utbm.fr",
-            "last-message-content": "Très bien et toi ?"
+            "id": 2,
+            "idList": 1,
+            "name": "Mohamed El Guendouz",
+            "email": "mohamedelg@utbm.fr",
+            "content": "Très bien et toi ?"
         },
         {
-            "id-message-list": 1,
-            "id-message": 3,
-            "last-message-name": "Loann Peurey",
-            "last-message-email": "lp@utbm.fr",
-            "last-message-content": "Pareil pour moi"
+            "id": 3,
+            "idList": 1,
+            "name": "Loann Peurey",
+            "email": "lp@utbm.fr",
+            "content": "Pareil pour moi"
         }
     ]
 }
