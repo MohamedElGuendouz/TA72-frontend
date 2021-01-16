@@ -16,8 +16,8 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', component:  ForumComponent,canActivate:[AuthGaurdService]},
-  { path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent },
+  { path: 'login', component: LoginComponent,},
+  { path: 'logout', component: LogoutComponent, },
   { path: 'users', component: UserListComponent,canActivate:[AuthGaurdService]},
   { path: 'forum', component: ForumComponent,canActivate:[AuthGaurdService]},
   { path: 'subject-detail/:id', component: SubjectDetailComponent,canActivate:[AuthGaurdService] },

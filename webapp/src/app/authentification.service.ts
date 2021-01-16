@@ -3,6 +3,13 @@ import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 
 export class User {
+  id: number;
+  username: string;
+  email: string;
+  roles: [string];
+  accessToken: string;
+  tokenType: string;
+
   constructor(
     public status: string
   ) { }
@@ -27,6 +34,7 @@ export class AuthentificationService {
      map(
        userData => {
         sessionStorage.setItem('username',uname);
+        localStorage.setItem('token',userData.accessToken);
         return userData;
        }
      )
@@ -42,5 +50,6 @@ export class AuthentificationService {
 
   logOut() {
     sessionStorage.removeItem('username')
+    localStorage.removeItem('token');
   }
 }
