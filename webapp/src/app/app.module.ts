@@ -30,6 +30,7 @@ import { CreateDiscussionComponent } from './create-discussion/create-discussion
 import { DiscussionComponent } from './discussion/discussion.component';
 
 import { SignupComponent } from './signup/signup.component';
+import { PublicationComponent } from './publication/publication.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { SignupComponent } from './signup/signup.component';
     HeaderComponent,
     CreateDiscussionComponent,
     DiscussionComponent,
-    SignupComponent
+    SignupComponent,
+    PublicationComponent
   ],
   imports: [
     BrowserModule,

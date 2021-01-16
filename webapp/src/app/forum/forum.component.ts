@@ -14,13 +14,10 @@ import { Router } from '@angular/router';
 export class ForumComponent implements OnInit {
   searchText: string = "";
   forums$: Observable<Discussion[]>;
-
+  idPublication: number;
   searchForm = this.fb.group({
     content: ['', Validators.required]
   });
-  filteredItems: any;
-  topic: any;
-  name: any;
 
   constructor(private http: HttpClientService, private fb: FormBuilder, private router: Router) { }
 
@@ -29,23 +26,12 @@ export class ForumComponent implements OnInit {
   }
 
   createDiscussion() {
-    this.router.navigateByUrl('/discussion/create');
+    this.router.navigateByUrl('/create/discussion');
   }
 
   onSubmit() {
     this.forums$ = this.http.searchDiscussions(this.searchText);
   }
 
-  assignCopy() {
-    this.filteredItems = Object.assign([], this.forums$);
-  }
-  filterItem(value) {
-    if (!value) {
-      this.assignCopy();
-    } // when nothing has typed
-    this.filteredItems = Object.assign([], this.forums$).filter(
-      item => item.topic.toLowerCase().indexOf(value.toLowerCase()) > -1
-    )
-  }
 
 }

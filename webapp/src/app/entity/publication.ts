@@ -1,10 +1,13 @@
 import { User } from "./user";
 
 export class Publication {
-    idReaction: number;
-    name: string;
-    email: string;
-    content: string;
+
+    constructor(
+        public idReaction: number,
+        public name: string,
+        public email: string,
+        public content: string
+    ) {}
 }
 
 export class Discussion {

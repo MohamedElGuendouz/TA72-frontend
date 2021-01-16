@@ -20,15 +20,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
-    this.httpClientService.getPublications().subscribe(
-      response =>this.handleSuccessfulResponse(response),
-     );
-  }
-
-  handleSuccessfulResponse(response)
-  {
-    this.publications=response;
+  
   }
 
 

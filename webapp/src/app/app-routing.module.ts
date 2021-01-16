@@ -18,12 +18,13 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  { path: '', component:  DiscussionComponent,canActivate:[AuthGaurdService]},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
-  { path: 'logout', component: LogoutComponent },
+  { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
+  { path: '', component:  ForumComponent,canActivate:[AuthGaurdService]},
+  { path: 'discussion/:id', component:  DiscussionComponent,canActivate:[AuthGaurdService]},
   { path: 'users', component: UserListComponent,canActivate:[AuthGaurdService]},
-  { path: 'discussion/create', component: CreateDiscussionComponent,canActivate:[AuthGaurdService]},
+  { path: 'create/discussion', component: CreateDiscussionComponent,canActivate:[AuthGaurdService]},
   { path: 'forum', component: ForumComponent,canActivate:[AuthGaurdService]},
   { path: 'subject-detail/:id', component: SubjectDetailComponent,canActivate:[AuthGaurdService] },
   { path: 'messagerie', component: MessagerieComponent,canActivate:[AuthGaurdService] },

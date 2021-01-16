@@ -19,6 +19,10 @@ export class HttpClientService {
     console.log("get Publications");
     return this.httpClient.get<Discussion[]>('http://localhost:8081/api/discussion/list');
   }
+  public getDiscussionsById(id): Observable<Discussion> {
+    console.log("get Publications by Id");
+    return this.httpClient.get<Discussion>('http://localhost:8081/api/discussion/get?idDisc='+id);
+  }
 
   public searchDiscussions(substring): Observable<Discussion[]> {
     console.log("get Publications with substring");
@@ -29,12 +33,12 @@ export class HttpClientService {
     return this.httpClient.post<Discussion>("http://localhost:8081/api/discussion/register", discussion);
   }
 
-  public getPublications(): Observable<Publication[]> {
+  public getPublications(id): Observable<Publication[]> {
     console.log("get Publications");
-    return this.httpClient.get<Publication[]>('http://localhost:8081/api/publication/list');
+    return this.httpClient.get<Publication[]>('http://localhost:8081/api/publication/list?idDisc='+id);
   }
 
-  public createPublications(publication) {
+  public createPublication(publication) {
     return this.httpClient.post<Publication>("http://localhost:8081/api/publication/register", publication);
   }
 

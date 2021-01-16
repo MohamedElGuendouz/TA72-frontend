@@ -1,4 +1,4 @@
-import { DatePipe, formatDate } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientService } from '../service/http-client.service';
 
@@ -40,7 +40,7 @@ export class CreateDiscussionComponent implements OnInit {
 
     this.httpClientService.createDiscussion(this.discussion)
         .subscribe( data => {
-          alert("Employee created successfully.");
+          alert("Discussion created successfully.");
         });
 
   }

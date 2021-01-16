@@ -1,1 +1,47 @@
-<p>discussion works!</p>
+<div class="container" *ngIf="discussion | async">
+    <br />
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h6>{{(discussion| async)?.creator.username}} - {{(discussion| async)?.creator.email}} - {{(discussion| async)?.creationTime}}</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"> {{(discussion| async)?.topic}} </p>
+                    <!--  <a class="card-link" >
+                        {{(discussion| async)?.like}}
+                        <i class="fa fa-thumbs-o-up"></i>
+                         J&#39;aime ce sujet
+                    </a>-->
+                    <button (click)="toggleDiv()" class="btn btn-primary" >
+                        <i class="fa fa-commenting-o"></i>
+                         Réagir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h3 class="text-dark mb-1">Commentaires</h3>
+    <br>
+    <div class="container">
+        <div *ngIf="is_show">
+            <app-create-reaction></app-create-reaction>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let comment of publications | async">
+                <div class="card">
+                    <h6 class="card-header">{{comment.creator.username}} - {{comment.creator.email}} - {{(comment| async)?.sendTime}} </h6>
+                    <div class="card-body">
+                        <p>{{comment.content}}</p>
+                        <!-- <a class="card-link" > {{comment.like}}  <i class="fa fa-thumbs-o-up"></i> J&#39;aime</a> -->
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
