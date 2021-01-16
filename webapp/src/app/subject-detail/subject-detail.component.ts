@@ -29,4 +29,8 @@ export class SubjectDetailComponent implements OnInit {
   toggleDiv() {
     this.is_show = !this.is_show;
   }
+
+  saveAppareilsToServer() {
+
+  }
 }

@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 export class Reaction {
     idReaction: number;
     name: string;
@@ -7,8 +9,7 @@ export class Reaction {
 
 export class Publication {
     idPublication: number;
-    subject: string;
-    name: string;
-    content: string;
-    reactionsList: number;
+    topic: string;
+    creationTime: Date;
+    creator: User;
 }

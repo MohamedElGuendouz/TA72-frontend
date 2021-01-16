@@ -7,10 +7,6 @@
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"></li>
-                <li class="nav-item"></li>
-                <li class="nav-item"></li>
-                <li class="nav-item"></li>
                 <li class="nav-item">
                     <a routerLink="/forum" class="nav-link">
                         <i class="fas fa-search"></i>
@@ -30,13 +26,10 @@
     </nav>
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
-            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-
-            </nav>
+            <app-header></app-header>
+            <br>
             <div class="container-fluid">
-
                 <router-outlet></router-outlet>
-
             </div>
         </div>
         <footer class="bg-white sticky-footer">

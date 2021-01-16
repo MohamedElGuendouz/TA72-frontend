@@ -20,6 +20,11 @@ import { ReactionDetailComponent } from './reaction-detail/reaction-detail.compo
 import { ReactionListComponent } from './reaction-list/reaction-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateReactionComponent } from './create-reaction/create-reaction.component';
+import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { CreateReactionComponent } from './create-reaction/create-reaction.compo
     UpdateUserComponent,
     ReactionDetailComponent,
     ReactionListComponent,
-    CreateReactionComponent
+    CreateReactionComponent,
+    UserComponent,
+    LoginComponent,
+    HomeComponent,
+    LogoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

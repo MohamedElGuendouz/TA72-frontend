@@ -1,0 +1,14 @@
+<table border="1">
+    <thead></thead>
+    <tr>
+      <th>name</th>
+      <th>designation</th>
+      </tr>
+    
+    <tbody>
+        <tr *ngFor="let publication of publications">
+            <td>{{publication.topic}}</td>
+            <td>{{publication.creationTime}}</td>
+            </tr>
+    </tbody>
+      </table>
