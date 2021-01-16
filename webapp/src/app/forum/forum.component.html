@@ -12,6 +12,9 @@
                     <input type="text" formControlName="content" class="form-control border-0 small" style="height: 95%;font-size: 15px;"
                         placeholder="&#61442; Entrer un mot-clé..." name="text" [(ngModel)]="searchText" />
                 </div>
+                <form (ngSubmit)="createDiscussion()">
+                    <button class="btn btn-success" type="submit"> Ajouter une discussion </button>
+                </form>
             </form>
         </div>
     </div>

@@ -33,7 +33,7 @@ export class CreateDiscussionComponent implements OnInit {
     console.log("before")
     console.log(this.discussion)
 
-    this.discussion.time = this.datePipe.transform(Date.now(),'MM-dd-yyyy hh-mm-ss')
+    this.discussion.time = this.datePipe.transform(Date.now(),'yyyy-MM-dd hh:mm:ss')
 
     console.log("after")
     console.log(this.discussion)

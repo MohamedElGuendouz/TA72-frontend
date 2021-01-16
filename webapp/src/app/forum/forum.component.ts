@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Discussion } from '../entity/publication';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClientService } from '../service/http-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forum',
@@ -21,26 +22,30 @@ export class ForumComponent implements OnInit {
   topic: any;
   name: any;
 
-  constructor(private http: HttpClientService, private fb: FormBuilder) { }
+  constructor(private http: HttpClientService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.forums$ = this.http.getDiscussions();
   }
 
-  onSubmit() {
-    this.forums$ = this.http.getDiscussions();
+  createDiscussion() {
+    this.router.navigateByUrl('/discussion/create');
   }
 
-  assignCopy(){
+  onSubmit() {
+    this.forums$ = this.http.searchDiscussions(this.searchText);
+  }
+
+  assignCopy() {
     this.filteredItems = Object.assign([], this.forums$);
- }
- filterItem(value){
-    if(!value){
-        this.assignCopy();
+  }
+  filterItem(value) {
+    if (!value) {
+      this.assignCopy();
     } // when nothing has typed
     this.filteredItems = Object.assign([], this.forums$).filter(
-       item => item.topic.toLowerCase().indexOf(value.toLowerCase()) > -1
+      item => item.topic.toLowerCase().indexOf(value.toLowerCase()) > -1
     )
- }
+  }
 
 }
