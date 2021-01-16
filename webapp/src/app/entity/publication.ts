@@ -1,15 +1,18 @@
 import { User } from "./user";
 
-export class Reaction {
+export class Publication {
     idReaction: number;
     name: string;
     email: string;
     content: string;
 }
 
-export class Publication {
-    idPublication: number;
-    topic: string;
-    creationTime: Date;
-    creator: User;
+export class Discussion {
+    constructor(
+        public idDiscusssion:number,
+        public topic:string,
+        public creationTime:string,
+        public creator:User
+    ) {
+    }
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import { Publication } from '../entity/publication';
+import { Discussion } from '../entity/publication';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HttpClientService } from '../service/http-client.service';
 
 @Component({
   selector: 'app-forum',
@@ -11,25 +12,35 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ForumComponent implements OnInit {
   searchText: string = "";
-  forums$: Observable<Publication[]> = this.http.get<Publication[]>('/api/publications');
+  forums$: Observable<Discussion[]>;
 
   searchForm = this.fb.group({
     content: ['', Validators.required]
   });
+  filteredItems: any;
+  topic: any;
+  name: any;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) { }
+  constructor(private http: HttpClientService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.forums$ = this.http.getDiscussions();
   }
 
   onSubmit() {
-    console.log("ok2")
-    if (this.searchText == "") {
-      this.forums$ = this.http.get<Publication[]>('/api/publications');
-
-    } else {
-      this.forums$ = this.http.get<Publication[]>('/api/publications/_search?subject=' + this.searchText);
-    }
+    this.forums$ = this.http.getDiscussions();
   }
+
+  assignCopy(){
+    this.filteredItems = Object.assign([], this.forums$);
+ }
+ filterItem(value){
+    if(!value){
+        this.assignCopy();
+    } // when nothing has typed
+    this.filteredItems = Object.assign([], this.forums$).filter(
+       item => item.topic.toLowerCase().indexOf(value.toLowerCase()) > -1
+    )
+ }
 
 }

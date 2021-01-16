@@ -1,0 +1,10 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add Discussion</h2>
+    <form>
+        <div class="form-group">
+            <label for="topic">Topic:</label>
+            <input type="topic" [(ngModel)]="discussion.topic" placeholder="topic" name="topic" class="form-control" id="topic">
+        </div>
+        <button class="btn btn-success" (click)="createDiscussion()">Create</button>
+    </form>
+</div>

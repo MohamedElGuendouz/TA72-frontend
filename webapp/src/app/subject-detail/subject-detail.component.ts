@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
-import { Publication, Reaction } from '../entity/publication';
+import { Discussion, Publication } from '../entity/publication';
 
 @Component({
   selector: 'app-subject-detail',
@@ -14,15 +14,15 @@ export class SubjectDetailComponent implements OnInit {
 
 
   id = String;
-  publication: Observable<Publication>;
-  reactionsList: Observable<Reaction[]>;
+  publication: Observable<Discussion>;
+  reactionsList: Observable<Publication[]>;
 
   constructor(public actRoute: ActivatedRoute, public http: HttpClient) { }
 
   ngOnInit(): void {
     this.id = this.actRoute.snapshot.params['id'].toString();
-    this.publication = this.http.get<Publication>('/api/publications/' + this.id);
-    this.reactionsList = this.http.get<Reaction[]>('/api/get-reactions/');
+    this.publication = this.http.get<Discussion>('/api/publications/' + this.id);
+    this.reactionsList = this.http.get<Publication[]>('/api/get-reactions/');
   }
 
   is_show = false;

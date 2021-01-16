@@ -1,31 +1,44 @@
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Publication } from '../entity/publication';
+import { UserSignUpStructure } from '../authentification.service';
+import { Discussion, Publication } from '../entity/publication';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpClientService {
 
-  auth_token:string = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJNb01vIiwiaWF0IjoxNjEwNTU4NDc2LCJleHAiOjE2MTA2NDQ4NzZ9.npvYyYH-A-ZHLBFR07--pXSbPAkXNJXo1e1KZ_gqFXSTNtAH1BWp36fGUzj75-PW1aqQcE-mE2B5RuTBP25KaQ"
-
   constructor(
-    private httpClient:HttpClient
+    private httpClient: HttpClient
   ) {
 
-   }
+  }
 
-  getPublications(): Observable<Publication[]>
-  {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin':'*',
-      "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-      "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token'",
-      'Authorization': `Bearer ${this.auth_token}`
-    })
+  public getDiscussions(): Observable<Discussion[]> {
     console.log("get Publications");
-    return this.httpClient.get<Publication[]>('http://localhost:8081/api/discussion/list', { headers: headers });
+    return this.httpClient.get<Discussion[]>('http://localhost:8081/api/discussion/list');
+  }
+
+  public searchDiscussions(substring): Observable<Discussion[]> {
+    console.log("get Publications with substring");
+    return this.httpClient.get<Discussion[]>('http://localhost:8081/api/discussion/search?topic=' + substring);
+  }
+
+  public createDiscussion(discussion) {
+    return this.httpClient.post<Discussion>("http://localhost:8081/api/discussion/register", discussion);
+  }
+
+  public getPublications(): Observable<Publication[]> {
+    console.log("get Publications");
+    return this.httpClient.get<Publication[]>('http://localhost:8081/api/publication/list');
+  }
+
+  public createPublications(publication) {
+    return this.httpClient.post<Publication>("http://localhost:8081/api/publication/register", publication);
+  }
+
+  public createUser(user) {
+    return this.httpClient.post<UserSignUpStructure>("http://localhost:8081/api/auth/signup", user);
   }
 }

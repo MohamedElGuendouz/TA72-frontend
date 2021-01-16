@@ -17,7 +17,7 @@ export class UpdateUserComponent implements OnInit {
     private userService: UsersService) { }
 
   ngOnInit(): void {
-    this.user = new User();
+    this.user ;
 
     this.id = this.route.snapshot.params['id'];
 
@@ -32,7 +32,7 @@ export class UpdateUserComponent implements OnInit {
     this.userService.updateUser(this.id, this.user)
       .subscribe(data => {
         console.log(data);
-        this.user = new User();
+        this.user ;
         this.gotoList();
       }, error => console.log(error));
   }

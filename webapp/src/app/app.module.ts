@@ -18,13 +18,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ReactionDetailComponent } from './reaction-detail/reaction-detail.component';
 import { ReactionListComponent } from './reaction-list/reaction-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateReactionComponent } from './create-reaction/create-reaction.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
+import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-interceptor.service';
+import { CreateDiscussionComponent } from './create-discussion/create-discussion.component';
+import { DiscussionComponent } from './discussion/discussion.component';
+
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,10 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     HomeComponent,
     LogoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateDiscussionComponent,
+    DiscussionComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +65,11 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { 
+      provide:HTTP_INTERCEPTORS, useClass:BasicAuthHttpInterceptorService, multi:true 
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

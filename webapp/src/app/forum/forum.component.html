@@ -21,13 +21,11 @@
     <div class="container">
         <div *ngFor="let forum of forums$ | async">
             <div class="card">
-                <h6 class="card-header">{{forum.name}} - {{forum.email}}</h6>
+                <h6 class="card-header">{{forum.creator.username}} - {{forum.creator.email}}</h6>
                 <div class="card-body">
-                    <h5 class="card-title">Sujet : {{forum.subject}}</h5>
+                    <h5 class="card-title">Sujet : {{forum.topic}}</h5>
                     <hr>
-                    <p class="text-muted card-subtitle mb-2">{{forum.content}}</p>
-                    <p class="text-muted card-subtitle mb-2">{{forum.idPublication}}</p>
-                    <button class="btn btn-primary" [routerLink]="['/subject-detail', forum.id]">Détails</button>
+                    <button class="btn btn-primary" [routerLink]="['/subject-detail', forum.id]">En voir plus</button>
                 </div>
             </div>
             <br>

@@ -1,14 +1,20 @@
 export class Role {
-    id: number;
-    name: string;
+    constructor(
+        public id: number,
+        public name: string
+    ){
+    }
 }
 
 export class User {
-    id: number;
-    username: string;
-    password: string;
-    email: string;
-    firstname: string;
-    lastname: string;
-    roles: Role[];
+    constructor(
+        public id: number,
+        public username: string,
+        public password: string,
+        public email: string,
+        public firstName: string,
+        public lastname: string,
+        public role: Role[]
+        ){
+        }
 }

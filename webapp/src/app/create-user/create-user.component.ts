@@ -10,7 +10,7 @@ import { UsersService } from '../users.service';
 })
 export class CreateUserComponent implements OnInit {
 
-  user: User = new User();
+  user: User;
   submitted = false;
 
 
@@ -22,14 +22,14 @@ export class CreateUserComponent implements OnInit {
 
   newUser(): void {
     this.submitted = false;
-    this.user = new User();
+    this.user ;
   }
 
   save() {
     this.userService
     .createUser(this.user).subscribe(data => {
       console.log(data)
-      this.user = new User();
+      this.user;
       this.gotoList();
     }, 
     error => console.log(error));

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  private baseUrl = 'http://localhost:8080/TA72-Brainstorming/api/v1/users';
+  private baseUrl = 'http://localhost:8081/api/users';
 
   constructor(private http: HttpClient) { }
 
