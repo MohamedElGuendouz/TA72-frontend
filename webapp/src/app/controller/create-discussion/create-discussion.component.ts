@@ -29,14 +29,8 @@ export class CreateDiscussionComponent implements OnInit {
   }
 
   createDiscussion(): void {
-    console.log("createDiscussion")
-    console.log("before")
-    console.log(this.discussion)
 
     this.discussion.time = this.datePipe.transform(Date.now(),'yyyy-MM-dd hh:mm:ss')
-
-    console.log("after")
-    console.log(this.discussion)
 
     this.httpClientService.createDiscussion(this.discussion)
         .subscribe( data => {

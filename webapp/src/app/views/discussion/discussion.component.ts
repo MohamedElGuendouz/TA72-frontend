@@ -24,9 +24,6 @@ export class DiscussionComponent implements OnInit {
     this.id = this.route.snapshot.params['id'].toString();
     this.discussion = this.httpClientService.getDiscussionsById(this.id)
     this.publications = this.httpClientService.getPublications(this.id)
-    
-    console.log(this.discussion)
-    console.log(this.publications)
   }
   is_show = false;
   toggleDiv() {

@@ -48,17 +48,11 @@ export class CreateReactionComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     this.publication.time = this.datePipe.transform(Date.now(),'yyyy-MM-dd hh:mm:ss')
     this.publication.content = this.reactionForm.value.content
-    console.log(this.publication)
+
     this.httpClientService.createPublication(this.publication)
     .subscribe( data => {
       window.location.reload();
       alert("Publication created successfully.")
     });
-  }
-
-  updateProfile() {
-    this.reactionForm.patchValue({
-      content: 'Merci pour votre aide!'
-    })
   }
 }

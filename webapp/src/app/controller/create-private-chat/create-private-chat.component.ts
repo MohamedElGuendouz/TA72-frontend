@@ -40,17 +40,10 @@ export class CreatePrivateChatComponent implements OnInit {
     this.chat.time = this.datePipe.transform(Date.now(),'yyyy-MM-dd hh:mm:ss')
     this.chat.receiverId = Number(this.chatForm.value.receiverId)
     this.chat.content = this.chatForm.value.content
-    console.log(this.chat)
     this.httpClientService.createMessage(this.chat)
     .subscribe( data => {
       window.location.reload();
       alert("Chat created successfully.")
     });
-  }
-
-  updateProfile() {
-    this.chatForm.patchValue({
-      content: 'Merci pour votre aide!'
-    })
   }
 }

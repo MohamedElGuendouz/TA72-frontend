@@ -61,7 +61,6 @@ export class AuthentificationService {
   }
 
   createAccount(user) {
-    console.log(user)
     return this.httpClient.post<UserSignUpStructure>('http://localhost:8081/api/auth/signup', {
       "username": user.username,
       "email": user.email,
@@ -69,7 +68,7 @@ export class AuthentificationService {
       "firstName": user.firstName,
       "lastName": user.lastName,
       "role": user.role
-    }​
+    }
     ).pipe(
       map(
         userData => {
@@ -81,13 +80,12 @@ export class AuthentificationService {
     );
   }
 
-isUserLoggedIn() {
-  let user = sessionStorage.getItem('username')
-  console.log(!(user === null))
-  return !(user === null)
-}
-logOut() {
-  sessionStorage.removeItem('username')
-  localStorage.removeItem('token');
-}
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('username')
+    return !(user === null)
+  }
+  logOut() {
+    sessionStorage.removeItem('username')
+    localStorage.removeItem('token');
+  }
 }

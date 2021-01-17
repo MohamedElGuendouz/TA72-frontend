@@ -40,9 +40,7 @@ export class CreateMessageComponent implements OnInit {
 
   sendMessage(): void {
     this.message.time = this.datePipe.transform(Date.now(),'yyyy-MM-dd hh:mm:ss')
-    console.log("createDiscussion")
-    console.log("before")
-    console.log(this.message)
+
     this.httpClientService.createMessage(this.message)
         .subscribe( data => {
           window.location.reload();

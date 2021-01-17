@@ -18,15 +18,12 @@ export class SignupComponent implements OnInit {
   }
 
   createUser(): void {
-    console.log("createUser")
     this.user.role = ["user"]
     this.loginservice.createAccount(this.user)
         .subscribe( data => {
           alert("User created successfully.");
           this.router.navigate(['login']);
         });
-    console.log("Finish")
-
   }
 
 }
