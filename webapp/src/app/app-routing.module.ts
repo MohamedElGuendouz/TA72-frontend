@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CreateDiscussionComponent } from './create-discussion/create-discussion.component';
+import { CreatePrivateChatComponent } from './create-private-chat/create-private-chat.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { ForumService } from './forum.service';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'messagerie/:id', component:  MessagerieComponent,canActivate:[AuthGaurdService]},
   { path: 'users', component: UserListComponent,canActivate:[AuthGaurdService]},
   { path: 'create/discussion', component: CreateDiscussionComponent,canActivate:[AuthGaurdService]},
+  { path: 'create/chat', component: CreatePrivateChatComponent,canActivate:[AuthGaurdService]},
   { path: 'forum', component: ForumComponent,canActivate:[AuthGaurdService]},
   { path: 'subject-detail/:id', component: SubjectDetailComponent,canActivate:[AuthGaurdService] },
   { path: 'messagerie', component: MessagerieComponent,canActivate:[AuthGaurdService] },

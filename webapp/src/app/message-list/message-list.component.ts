@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
-import { Apercu, Message } from '../entity/message';
+import { Message } from '../entity/message';
 import { HttpClientService } from '../service/http-client.service';
 
 @Component({
@@ -18,7 +18,6 @@ export class MessageListComponent implements OnInit {
 
   ngOnInit(): void {
     this.listMessage = this.httpClientService.getLastMessage(sessionStorage.getItem('id_user'))
-
   }
 
 }

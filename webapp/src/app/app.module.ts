@@ -31,6 +31,7 @@ import { DiscussionComponent } from './discussion/discussion.component';
 
 import { SignupComponent } from './signup/signup.component';
 import { PublicationComponent } from './publication/publication.component';
+import { CreatePrivateChatComponent } from './create-private-chat/create-private-chat.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { PublicationComponent } from './publication/publication.component';
     CreateDiscussionComponent,
     DiscussionComponent,
     SignupComponent,
-    PublicationComponent
+    PublicationComponent,
+    CreatePrivateChatComponent
   ],
   imports: [
     BrowserModule,

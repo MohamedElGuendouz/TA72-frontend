@@ -1,0 +1,23 @@
+<div class="card text-center" style="padding: 30px;">
+    <form [formGroup]="chatForm" (ngSubmit)="onSubmit()" >
+        <div class="form-row d-xl-flex justify-content-xl-center align-items-xl-end" style="padding: 15px;">
+            <div class="col">
+                <h5>Content</h5>
+            </div>
+            <div class="col">
+                <h5>receiver id</h5>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+                <input formControlName="content" type="text" class="form-control" style="margin: 10px;" />
+            </div>
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+                <input formControlName="receiverId" type="text" class="form-control" style="margin: 10px;" />
+            </div>
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+                <button class="btn btn-primary" type="submit">Envoyer</button>
+            </div>
+        </div>
+    </form>
+</div>
