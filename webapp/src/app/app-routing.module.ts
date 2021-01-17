@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
   { path: '', component:  ForumComponent,canActivate:[AuthGaurdService]},
   { path: 'discussion/:id', component:  DiscussionComponent,canActivate:[AuthGaurdService]},
+  { path: 'messagerie/:id', component:  MessagerieComponent,canActivate:[AuthGaurdService]},
   { path: 'users', component: UserListComponent,canActivate:[AuthGaurdService]},
   { path: 'create/discussion', component: CreateDiscussionComponent,canActivate:[AuthGaurdService]},
   { path: 'forum', component: ForumComponent,canActivate:[AuthGaurdService]},

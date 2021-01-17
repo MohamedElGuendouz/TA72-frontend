@@ -8,6 +8,11 @@
             </div>
             <div class="col-8">
                 <app-message-detail></app-message-detail>
+                <div class="container">
+                    <div *ngIf="is_show">
+                        <app-create-message></app-create-message>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

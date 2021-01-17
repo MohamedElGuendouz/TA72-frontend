@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { Apercu, Message } from '../entity/message';
+import { HttpClientService } from '../service/http-client.service';
 
 @Component({
   selector: 'app-message-list',
@@ -11,12 +12,13 @@ import { Apercu, Message } from '../entity/message';
 })
 export class MessageListComponent implements OnInit {
 
-  lastMessage: Observable<Apercu[]>;
+  listMessage: Observable<Message[]>;
 
-  constructor(public actRoute: ActivatedRoute, public http: HttpClient) { }
+  constructor(public actRoute: ActivatedRoute, public httpClientService: HttpClientService) { }
 
   ngOnInit(): void {
-    this.lastMessage = this.http.get<Apercu[]>('/api/last-messages/');
+    this.listMessage = this.httpClientService.getLastMessage(sessionStorage.getItem('id_user'))
+
   }
 
 }

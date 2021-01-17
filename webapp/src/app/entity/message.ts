@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 export class Apercu {
     id: number;
     name: string;
@@ -7,7 +9,8 @@ export class Apercu {
 
 export class Message {
     id: number;
-    name: string;
-    email: string;
     content: string;
+    sendTime: string;
+    sender: User;
+    receiver: User;
 }

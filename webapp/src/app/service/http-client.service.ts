@@ -2,17 +2,33 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserSignUpStructure } from '../authentification.service';
+import { DiscussionForCreate } from '../create-discussion/create-discussion.component';
+import { MessageForCreate } from '../create-message/create-message.component';
+import { Message } from '../entity/message';
 import { Discussion, Publication } from '../entity/publication';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpClientService {
+  
+  
 
   constructor(
     private httpClient: HttpClient
   ) {
 
+  }
+
+  public createMessage(message) {
+    return this.httpClient.post<Discussion>("http://localhost:8081/api/message/register", message);
+  }
+
+  getLastMessage(id): Observable<Message[]> {
+    return this.httpClient.get<Message[]>('http://localhost:8081/api/message/lastMessages?idUser='+id);
+  }
+  getMessageById(idSender, idReceiver): Observable<Message[]> {
+    return this.httpClient.get<Message[]>('http://localhost:8081/api/message/list?idSender='+idSender+"&idReceiver="+idReceiver);
   }
 
   public getDiscussions(): Observable<Discussion[]> {
