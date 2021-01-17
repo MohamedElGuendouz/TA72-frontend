@@ -21,7 +21,7 @@ export class HttpClientService {
   }
 
   public createMessage(message) {
-    return this.httpClient.post<Discussion>("http://localhost:8081/api/message/register", message);
+    return this.httpClient.post<Message>("http://localhost:8081/api/message/register", message);
   }
 
   getLastMessage(id): Observable<Message[]> {

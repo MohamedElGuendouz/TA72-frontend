@@ -1,23 +1,10 @@
-<div class="card text-center" style="padding: 30px;">
-    <form [formGroup]="chatForm" (ngSubmit)="onSubmit()" >
-        <div class="form-row d-xl-flex justify-content-xl-center align-items-xl-end" style="padding: 15px;">
-            <div class="col">
-                <h5>Content</h5>
-            </div>
-            <div class="col">
-                <h5>receiver id</h5>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
-                <input formControlName="content" type="text" class="form-control" style="margin: 10px;" />
-            </div>
-            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
-                <input formControlName="receiverId" type="text" class="form-control" style="margin: 10px;" />
-            </div>
-            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center">
+<div class="register">
+        <div class="form-container">
+            <form [formGroup]="chatForm" (ngSubmit)="onSubmit()">
+                <h2 class="text-center">Créer un chat privé</h2>
+                <input formControlName="content" placeholder="Contenu du message" type="text" class="form-control" />
+                <input formControlName="receiverId"  placeholder="Id du destinataire" type="text" class="form-control"/>
                 <button class="btn btn-primary" type="submit">Envoyer</button>
-            </div>
+            </form>
         </div>
-    </form>
-</div>
+    </div>

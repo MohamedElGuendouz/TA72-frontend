@@ -1,9 +1,9 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <ul class="navbar-nav">
-      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
-      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/signup" class="nav-link">Signup</a></li>
-      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Connexion</a></li>
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/signup" class="nav-link">Créer un compte</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Déconnexion</a></li>
     </ul>
   </nav>
 </header>
