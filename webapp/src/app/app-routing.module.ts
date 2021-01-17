@@ -1,22 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CreateDiscussionComponent } from './create-discussion/create-discussion.component';
-import { CreatePrivateChatComponent } from './create-private-chat/create-private-chat.component';
-import { CreateUserComponent } from './create-user/create-user.component';
-import { DiscussionComponent } from './discussion/discussion.component';
-import { ForumService } from './forum.service';
-import { ForumComponent } from './forum/forum.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { MessageListComponent } from './message-list/message-list.component';
-import { MessagerieComponent } from './messagerie/messagerie.component';
-import { AuthGaurdService } from './service/auth-gaurd.service';
-import { SignupComponent } from './signup/signup.component';
-import { SubjectDetailComponent } from './subject-detail/subject-detail.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserComponent } from './user/user.component';
+import { CreateDiscussionComponent } from './controller/create-discussion/create-discussion.component';
+import { CreatePrivateChatComponent } from './controller/create-private-chat/create-private-chat.component';
+import { ForumComponent } from './views/forum/forum.component';
+import { LoginComponent } from './views/login/login.component';
+import { LogoutComponent } from './views/logout/logout.component';
+import { MessageListComponent } from './views/message-list/message-list.component';
+import { MessagerieComponent } from './views/messagerie/messagerie.component';
+import { AuthGaurdService } from './services/auth-gaurd.service';
+import { SignupComponent } from './views/signup/signup.component';
+import { DiscussionComponent } from './views/discussion/discussion.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -25,16 +18,11 @@ const routes: Routes = [
   { path: '', component:  ForumComponent,canActivate:[AuthGaurdService]},
   { path: 'discussion/:id', component:  DiscussionComponent,canActivate:[AuthGaurdService]},
   { path: 'messagerie/:id', component:  MessagerieComponent,canActivate:[AuthGaurdService]},
-  { path: 'users', component: UserListComponent,canActivate:[AuthGaurdService]},
   { path: 'create/discussion', component: CreateDiscussionComponent,canActivate:[AuthGaurdService]},
   { path: 'create/chat', component: CreatePrivateChatComponent,canActivate:[AuthGaurdService]},
   { path: 'forum', component: ForumComponent,canActivate:[AuthGaurdService]},
-  { path: 'subject-detail/:id', component: SubjectDetailComponent,canActivate:[AuthGaurdService] },
   { path: 'messagerie', component: MessagerieComponent,canActivate:[AuthGaurdService] },
-  { path: 'message-list', component: MessageListComponent,canActivate:[AuthGaurdService] },
-  { path: 'user/add', component: CreateUserComponent,canActivate:[AuthGaurdService] },
-  { path: 'update/user/:id', component: UpdateUserComponent,canActivate:[AuthGaurdService] },
-  { path: 'details/user/:id', component: UserDetailComponent,canActivate:[AuthGaurdService] },
+  { path: 'message-list', component: MessageListComponent,canActivate:[AuthGaurdService] }
 ];
 
 @NgModule({

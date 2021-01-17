@@ -1,0 +1,11 @@
+<div class="container login-clean">
+  <form>
+    <h2 >Connexion</h2>
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Username"  name="username" [(ngModel)]="username"/>
+      <input class="form-control" type="password" name="password" placeholder="Mot de passe" [(ngModel)]="password" />
+      <button class="btn btn-primary btn-block" type="submit" style="background: rgb(29,79,225);" (click)=checkLogin()>Connexion</button>
+    </div>
+    <a class="forgot" href="/signup">Vous n'avez pas encore de compte ?</a>
+  </form>
+</div>

@@ -3,35 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MessagerieComponent } from './messagerie/messagerie.component';
-import { MessageDetailComponent } from './message-detail/message-detail.component';
-import { MessageListComponent } from './message-list/message-list.component';
-import { CreateMessageComponent } from './create-message/create-message.component';
-import { ForumComponent } from './forum/forum.component';
-import { SubjectDetailComponent } from './subject-detail/subject-detail.component';
-import { CreateSubjectComponent } from './create-subject/create-subject.component';
-import { CreateUserComponent } from './create-user/create-user.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
+import { MessagerieComponent } from './views/messagerie/messagerie.component';
+import { MessageListComponent } from './views/message-list/message-list.component';
+import { CreateMessageComponent } from './controller/create-message/create-message.component';
+import { ForumComponent } from './views/forum/forum.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { ReactionDetailComponent } from './reaction-detail/reaction-detail.component';
-import { ReactionListComponent } from './reaction-list/reaction-list.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CreateReactionComponent } from './create-reaction/create-reaction.component';
-import { UserComponent } from './user/user.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { LogoutComponent } from './logout/logout.component';
-import { HeaderComponent } from './header/header.component';
-import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-interceptor.service';
-import { CreateDiscussionComponent } from './create-discussion/create-discussion.component';
-import { DiscussionComponent } from './discussion/discussion.component';
+import { CreateReactionComponent } from './controller/create-reaction/create-reaction.component';
+import { LoginComponent } from './views/login/login.component';
+import { LogoutComponent } from './views/logout/logout.component';
+import { BasicAuthHttpInterceptorService } from './services/basic-auth-http-interceptor.service';
+import { CreateDiscussionComponent } from './controller/create-discussion/create-discussion.component';
 
-import { SignupComponent } from './signup/signup.component';
-import { PublicationComponent } from './publication/publication.component';
-import { CreatePrivateChatComponent } from './create-private-chat/create-private-chat.component';
+import { SignupComponent } from './views/signup/signup.component';
+import { CreatePrivateChatComponent } from './controller/create-private-chat/create-private-chat.component';
+import { HeaderComponent } from './views/header/header.component';
+import { MessageDetailComponent } from './views/message-detail/message-detail.component';
+import { DiscussionComponent } from './views/discussion/discussion.component';
 
 @NgModule({
   declarations: [
@@ -41,24 +30,13 @@ import { CreatePrivateChatComponent } from './create-private-chat/create-private
     MessageListComponent,
     CreateMessageComponent,
     ForumComponent,
-    SubjectDetailComponent,
-    CreateSubjectComponent,
-    CreateUserComponent,
-    UserDetailComponent,
-    UserListComponent,
-    UpdateUserComponent,
-    ReactionDetailComponent,
-    ReactionListComponent,
     CreateReactionComponent,
-    UserComponent,
     LoginComponent,
-    HomeComponent,
     LogoutComponent,
     HeaderComponent,
     CreateDiscussionComponent,
     DiscussionComponent,
     SignupComponent,
-    PublicationComponent,
     CreatePrivateChatComponent
   ],
   imports: [
